@@ -453,7 +453,8 @@ while guess != my_number:
 '''
 
 data = ['Error:File cannot be open', 'Error:No free space on disk', 'Error:File missing', 'Warning:Internet connection'
-        ' lost', 'Error:Access denied']
+                                                                                          ' lost',
+        'Error:Access denied']
 
 for s in data:
     print(s.upper())
@@ -480,13 +481,13 @@ for i in range(9):
     print(string_A, '\n', string_B)
 
 for i in range(1, 10):
-    print("x"*i)
+    print("x" * i)
 
 for i in range(1, 10):
     if i % 2 == 0:
-        print("x"*i)
+        print("x" * i)
     else:
-        print("o"*i)
+        print("o" * i)
 
 i = 10
 result = 1
@@ -526,7 +527,7 @@ counter = 0
 
 for word in words:
 
-    short_text += word+' '
+    short_text += word + ' '
     counter += 1
 
     if counter >= 20:
@@ -550,7 +551,7 @@ definitions = [
     'Cette notion s\'applique de manière évidente dans les systèmes de poulies et de leviers. Elle est centrale'
     ' dans les systèmes de freinage : on applique une petite force sur un parcours important et l\'on obtient une'
     ' force importante transmise au système de freinage pour une course de faible distance.'
-    ]
+]
 
 for definition in definitions:
 
@@ -560,10 +561,10 @@ for definition in definitions:
 
     for word in words:
 
-        short_text += word+' '
+        short_text += word + ' '
         counter += 1
 
-        if counter>=20:
+        if counter >= 20:
             print(short_text)
             break
 
@@ -626,6 +627,7 @@ while True:
     print('You need to make a valid choice. Press ENTER and try again!')
     input('PRESS ENTER, to back to menu')
 
+
 def print_cat():
     # this function prints a cat ascii-art
     txt = r'''
@@ -634,6 +636,7 @@ def print_cat():
  \_^_/'''
     print(txt)
     return
+
 
 def print_bear():
     # this function prints a bear ascii-art
@@ -665,3 +668,175 @@ def print_bat():
 print_cat()
 print_bear()
 print_bat()
+
+
+def count_to_end_of_year():
+    from datetime import date
+    date_today = date.today()
+    current_year = date_today.year
+    date_end_year = date(current_year, 12, 31)
+    delta = date_end_year - date_today
+    print(delta.days)
+    return
+
+
+count_to_end_of_year()
+
+
+def print_animal(animal):
+    # this function prints a cat, bear or bat ascii-art
+    txt_cat = r'''
+|\---/|
+| o_o |
+ \_^_/'''
+    txt_bear = r'''
+/  \.-"""-./  \
+\    -   -    /
+ |   o   o   |
+ \  .-'"'-.  /
+  '-\__Y__/-'
+     `---`'''
+    txt_bat = r'''
+   /\                 /\
+  / \'._   (\_/)   _.'/ \
+ /_.''._'--('.')--'_.''._\
+ | \_ / `;=/ " \=;` \ _/ |
+  \/ `\__|`\___/`|__/`  \/
+          \(/|\)/  
+     '''
+    if animal == 'cat':
+        print(txt_cat)
+    elif animal == 'bear':
+        print(txt_bear)
+    elif animal == 'bat':
+        print(txt_bat)
+    else:
+        print("Cannot print '%s'. Correct values for the parameter are: cat, bear, bat" % animal)
+    return
+
+
+print_animal('cat')
+print_animal(animal='bat')
+print_animal(animal='frog')
+print_animal('bear')
+print_animal('pig')
+
+
+def days_to_end_of_year(year, month, day):
+    from datetime import date
+    date_today = date(year, month, day)
+    date_end_year = date(year, 12, 31)
+    delta = date_end_year - date_today
+    print(delta.days)
+    return
+
+
+days_to_end_of_year(2021, 1, 1)
+days_to_end_of_year(2020, 12, 30)
+days_to_end_of_year(day=15, year=2000, month=9)
+days_to_end_of_year(month=11, year=1988, day=10)
+
+
+def print_animal(animal=''):
+    # this function prints a cat, bear or bat ascii-art
+    txt_cat = r'''
+|\---/|
+| o_o |
+ \_^_/'''
+    txt_bear = r'''
+/  \.-"""-./  \
+\    -   -    /
+ |   o   o   |
+ \  .-'"'-.  /
+  '-\__Y__/-'
+     `---`'''
+    txt_bat = r'''
+   /\                 /\
+  / \'._   (\_/)   _.'/ \
+ /_.''._'--('.')--'_.''._\
+ | \_ / `;=/ " \=;` \ _/ |
+  \/ `\__|`\___/`|__/`  \/
+          \(/|\)/  
+     '''
+
+    if animal == 'cat':
+        print(txt_cat)
+    elif animal == 'bear':
+        print(txt_bear)
+    elif animal == 'bat':
+        print(txt_bat)
+    else:
+        print("Cannot print '%s'. Correct values for the parameter are: cat, bear, bat" % animal)
+    return
+
+
+print_animal()
+
+
+def days_to_end_of_year(year=date.today().year, month=date.today().month, day=date.today().day):
+    date_today = date(year, month, day)
+    date_end_year = date(year, 12, 31)
+    delta = date_end_year - date_today
+    print(delta.days)
+    return
+
+
+days_to_end_of_year()
+days_to_end_of_year(month=1)
+days_to_end_of_year(day=30, month=12)
+
+
+def print_animal(animal=''):
+    # this function prints a cat, bear or bat ascii-art
+    txt_cat = r'''
+|\---/|
+| o_o |
+ \_^_/'''
+    txt_bear = r'''
+/  \.-"""-./  \
+\    -   -    /
+ |   o   o   |
+ \  .-'"'-.  /
+  '-\__Y__/-'
+     `---`'''
+    txt_bat = r'''
+   /\                 /\
+  / \'._   (\_/)   _.'/ \
+ /_.''._'--('.')--'_.''._\
+ | \_ / `;=/ " \=;` \ _/ |
+  \/ `\__|`\___/`|__/`  \/
+          \(/|\)/  
+     '''
+
+    if animal == 'cat':
+        print(txt_cat)
+    elif animal == 'bear':
+        print(txt_bear)
+    elif animal == 'bat':
+        print(txt_bat)
+    else:
+        print("Cannot print '%s'. Correct values for the parameter are: cat, bear, bat" % animal)
+        return False
+    return True
+
+
+if print_animal():
+    print('The parameter was correct')
+else:
+    print('The parameter was INCORRECT')
+if print_animal('cat'):
+    print('The parameter was correct')
+else:
+    print('The parameter was INCORRECT')
+
+
+def days_to_end_of_year(year=date.today().year, month=date.today().month, day=date.today().day):
+    date_today = date(year, month, day)
+    date_end_year = date(year, 12, 31)
+    delta = date_end_year - date_today
+    return print('Counting from', date_today, 'days remaining', delta.days)
+
+
+days_to_end_of_year()
+days_to_end_of_year(month=1)
+days_to_end_of_year(day=30, month=12)
