@@ -840,3 +840,53 @@ def days_to_end_of_year(year=date.today().year, month=date.today().month, day=da
 days_to_end_of_year()
 days_to_end_of_year(month=1)
 days_to_end_of_year(day=30, month=12)
+
+
+def print_animal(*animals):
+    # this function prints a cat, bear or bat ascii-art
+    txt_cat = r'''
+|\---/|
+| o_o |
+ \_^_/'''
+    txt_bear = r'''
+/  \.-"""-./  \
+\    -   -    /
+ |   o   o   |
+ \  .-'"'-.  /
+  '-\__Y__/-'
+     `---`'''
+    txt_bat = r'''
+   /\                 /\
+  / \'._   (\_/)   _.'/ \
+ /_.''._'--('.')--'_.''._\
+ | \_ / `;=/ " \=;` \ _/ |
+  \/ `\__|`\___/`|__/`  \/
+          \(/|\)/  
+     '''
+    for animal in animals:
+        if animal == 'cat':
+            print(txt_cat)
+        elif animal == 'bear':
+            print(txt_bear)
+        elif animal == 'bat':
+            print(txt_bat)
+        else:
+            print("Cannot print '%s'. Correct values for the parameter are: cat, bear, bat" % animal)
+    return
+
+
+print_animal()
+print_animal('dog', 'snake', 'bear')
+print_animal('bat', 'bear', 'bat')
+
+
+def count_to_end_of_year(*dates):
+    from datetime import date
+    for date_today in dates:
+        date_end_year = date(date.today().year, 12, 31)
+        delta = date_end_year - date_today
+        print('Date', date_today, 'days to end of year', delta.days)
+    return
+
+
+count_to_end_of_year(date(2000, 9, 9), date(1978, 2, 3), date(2021, 6, 30))
